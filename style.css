@@ -1,8 +1,10 @@
 :root {
+    --bg-dark: #0f0518;            
     --primary-plum: #4B0082;       
-    --accent-electric: #8A2BE2;    
-    --soft-lavender: #F4E6FD;      
-    --dark-text: #1A0B2E;        
+    --accent-electric: #b05bff;    
+    --soft-lavender: #e6c8ff;      
+    --glass-bg: rgba(75, 0, 130, 0.15);
+    --glass-border: rgba(176, 91, 255, 0.3);
     --white: #FFFFFF;
 }
 
@@ -14,9 +16,20 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    color: var(--dark-text);
-    background-color: #FAFAFF;
+    color: var(--soft-lavender);
+    background-color: var(--bg-dark);
+    /* Futuristic Grid Background */
+    background-image: 
+        linear-gradient(var(--glass-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
     line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.5px;
 }
 
 .container {
@@ -25,23 +38,74 @@ body {
     padding: 0 20px;
 }
 
+/* Glassmorphism Utility */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+}
 
+/* Hero Section & Profile Picture */
 .hero {
-    background-color: var(--soft-lavender);
-    border-bottom: 4px solid var(--accent-electric);
-    padding: 80px 0;
+    padding: 80px 0 60px 0;
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    color: var(--primary-plum);
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-slot {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-electric);
+    position: relative;
+    z-index: 2;
+}
+
+/* Pulsing Futuristic Glow Behind Picture */
+.glow-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--accent-electric), var(--primary-plum));
+    z-index: 1;
+    filter: blur(15px);
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+.cyber-title {
+    font-size: 3.5rem;
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(176, 91, 255, 0.5);
     margin-bottom: 10px;
 }
 
-.hero h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
+.neon-subtitle {
+    color: var(--accent-electric);
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
@@ -54,41 +118,40 @@ body {
 /* Buttons */
 .btn {
     display: inline-block;
-    background-color: var(--primary-plum);
+    background-color: var(--accent-electric);
     color: var(--white);
-    padding: 10px 24px;
+    padding: 12px 28px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 4px;
     font-weight: 600;
-    transition: background 0.3s ease;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.3s ease;
     margin: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.btn:hover {
-    background-color: var(--accent-electric);
+.glow-btn:hover {
+    box-shadow: 0 0 20px var(--accent-electric);
+    background-color: #c785ff;
 }
 
 .btn-outline {
     background-color: transparent;
-    color: var(--primary-plum);
-    border: 2px solid var(--primary-plum);
+    border: 1px solid var(--accent-electric);
+    color: var(--accent-electric);
 }
 
 .btn-outline:hover {
-    background-color: var(--soft-lavender);
-    color: var(--primary-plum);
+    background-color: var(--glass-bg);
+    box-shadow: inset 0 0 10px var(--accent-electric);
 }
 
-/* About Section */
+/* Sections */
 .about {
-    padding: 60px 20px;
+    padding: 40px;
     text-align: center;
-}
-
-.about h3 {
-    color: var(--primary-plum);
-    font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .about p {
@@ -97,38 +160,43 @@ body {
     font-size: 1.1rem;
 }
 
-/* Pillars Grid */
 .pillars {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 0 20px 60px 20px;
+    padding-bottom: 60px;
 }
 
 .card {
-    background: var(--white);
     padding: 30px;
-    border-radius: 8px;
-    border-top: 5px solid var(--accent-electric);
-    box-shadow: 0 4px 15px rgba(75, 0, 130, 0.08);
-    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(176, 91, 255, 0.2);
+}
+
+/* A little neon circuit accent line on the cards */
+.tech-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-electric), transparent);
 }
 
 .card h4 {
-    color: var(--primary-plum);
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
 
-/* Footer */
 footer {
-    background-color: var(--primary-plum);
-    color: var(--soft-lavender);
     text-align: center;
     padding: 30px 20px;
-    margin-top: 40px;
+    border-top: 1px solid var(--glass-border);
+    background: var(--bg-dark);
 }
