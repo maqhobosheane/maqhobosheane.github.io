@@ -107,6 +107,7 @@ h1, h2, h3, h4 {
 .cyber-title {
     font-size: 3.5rem;
     color: var(--white);
+    text-shadow: 0 0 10px rgba(176, 91, 255, 0.5);
     margin-bottom: 10px;
 }
 
