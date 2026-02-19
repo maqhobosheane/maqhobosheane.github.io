@@ -270,3 +270,31 @@ footer {
     border-top: 1px solid var(--glass-border);
     background: var(--bg-dark);
 }
+
+@media (max-width: 600px) {
+    .cyber-title {
+        font-size: 2.2rem !important; /* Shrinks your name so it doesn't cut off */
+        line-height: 1.2;
+    }
+
+    .neon-subtitle {
+        font-size: 0.9rem !important; /* Makes the tagline fit on one or two lines */
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px; /* Adds a little breathing room on the sides */
+    }
+
+    .profile-slot {
+        width: 180px;  /* Slightly smaller image for mobile height */
+        height: 180px;
+    }
+
+    .hero-links {
+        display: flex;
+        flex-direction: column; /* Stacks buttons so they don't squash each other */
+        gap: 10px;
+    }
+}
