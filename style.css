@@ -111,6 +111,14 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
 }
 
+.section-title {
+    font-size: 2.5rem;
+    color: var(--white);
+    text-shadow: 0 0 10px var(--accent-electric), 0 0 20px var(--accent-glow);
+    margin-bottom: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
 .neon-subtitle {
     color: var(--accent-electric);
     text-transform: uppercase;
