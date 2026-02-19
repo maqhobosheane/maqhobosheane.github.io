@@ -1,0 +1,134 @@
+:root {
+    --primary-plum: #4B0082;       
+    --accent-electric: #8A2BE2;    
+    --soft-lavender: #F4E6FD;      
+    --dark-text: #1A0B2E;        
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--dark-text);
+    background-color: #FAFAFF;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.hero {
+    background-color: var(--soft-lavender);
+    border-bottom: 4px solid var(--accent-electric);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--primary-plum);
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-plum);
+    color: var(--white);
+    padding: 10px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: var(--accent-electric);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-plum);
+    border: 2px solid var(--primary-plum);
+}
+
+.btn-outline:hover {
+    background-color: var(--soft-lavender);
+    color: var(--primary-plum);
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about h3 {
+    color: var(--primary-plum);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Pillars Grid */
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px 60px 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 5px solid var(--accent-electric);
+    box-shadow: 0 4px 15px rgba(75, 0, 130, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    color: var(--primary-plum);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-plum);
+    color: var(--soft-lavender);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
