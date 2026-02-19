@@ -5,7 +5,7 @@
     --accent-glow: #9d00ff;        
     --soft-lavender: #e6c8ff;      
     --glass-bg: rgba(20, 5, 35, 0.75); 
-    --glass-border: rgba(213, 128, 255, 0.5);
+    --glass-border: rgba(213, 128, 255, 0.25); 
     --white: #FFFFFF;
 }
 
@@ -18,16 +18,14 @@
 body {
     font-family: 'Inter', sans-serif;
     color: var(--soft-lavender);
-    
-
     background-color: var(--bg-deep);
+    
     background-image: 
-        linear-gradient(rgba(10, 2, 18, 0.88), rgba(10, 2, 18, 0.95)), 
-        url('tech-pr-policy-decisions.jpg');
-    background-size: cover;
-    background-position: center top;
+        linear-gradient(var(--glass-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
     background-attachment: fixed;
-    background-blend-mode: luminosity; 
     
     line-height: 1.6;
 }
@@ -68,6 +66,7 @@ h1, h2, h3, h4 {
         inset 0 0 10px var(--glass-border);
 }
 
+/* Glassmorphism Utility */
 .glass-panel {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -274,7 +273,6 @@ h1, h2, h3, h4 {
     color: var(--white);
     text-shadow: 0 0 10px var(--accent-neon);
 }
-
 
 footer {
     text-align: center;
