@@ -297,4 +297,17 @@ footer {
         flex-direction: column; /* Stacks buttons so they don't squash each other */
         gap: 10px;
     }
+    glass-panel {
+        padding: 20px !important; 
+        width: 100% !important;   
+    }
+
+    .article-body {
+        font-size: 1rem;          
+        overflow-wrap: break-word; 
+    }
+
+    .section-title {
+        font-size: 1.8rem !important;
+    }
 }
